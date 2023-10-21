@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodePel">
+    <title> Ticket Reservation </title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nanum+Gothic'>
+ </head>
+<body>
+  <div class="container-fluid">
+    <header class="navbar cd__main">
+      <div class="mx-auto">
+        <img src="../img/MyLogo.png" alt="MyLogo" width="60px" height="60px">
+      </div>
+    </header>
+  </div>
+  <div class="container-fluid">
+    <main class="cd_main">
+      <form class="booking-form" action="#" method="post">
+        <div class="elem-group">
+          <label class="label-custom" for="name">Your Name</label>
+          <input class="custom-input" type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\\sa-z]{3,20} required>
+        </div>
+
+        <div class="elem-group">
+          <label class="label-custom" for="destination">Destination</label>
+          <select class="custom-select" id="destination">
+            <option value="">Choose a Destination from the List</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Surabaya">Surabaya</option>
+          </select>
+        </div>
+
+        <div class="elem-group">
+          <label class="label-custom" for="price">Price per Ticket</label>
+          <input class="custom-input" type="text" id="price" name="price_amount" placeholder="0.00" pattern="[0-9.]*" required>
+        </div>
+
+        <div class="elem-group">
+          <label class="label-custom" for="amount">Ticket Amount</label>
+          <select class="custom-select" id="amount">
+            <option value="">Choose amount of ticket from the List</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <label for="member">Membership</label>
+        <input type="checkbox" id="member"><br>
+
+        <div class="elem-group">
+          <label class="label-custom" for="discount">Discount</label>
+          <input class="custom-input" type="text" id="discount" name="discount" placeholder="0.00" pattern="[0-9%]*" required>
+        </div>
+
+        <div class="elem-group">
+          <label class="label-custom" for="total-cost">Total Cost</label>
+          <input type="text" id="total-cost" disabled><br>
+        </div>
+
+        <hr>
+
+        <button type="submit">Reserve The Ticket</button>
+
+      </form>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+
+  <div id="reservationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div id="reservationDetails">
+        <!-- Reservation details will be displayed here -->
+      </div>
+      <button id="submitReservation">Submit</button> <!-- New button for submission -->
+    </div>
+  </div>
+  
+</body>
+</html>
